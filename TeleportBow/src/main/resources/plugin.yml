@@ -1,0 +1,8 @@
+name: TeleportBow
+version: '${project.version}'
+main: top.peacefuly.teleportbow.TeleportBow
+api-version: '1.21'
+commands:
+  tpbow:
+    permission: tpbow
+    description: "give teleport bow"

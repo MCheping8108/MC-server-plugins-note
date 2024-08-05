@@ -1,0 +1,7 @@
+name: CustomInventories
+version: '${project.version}'
+main: top.peacefuly.custominventories.CustomInventories
+api-version: '1.21'
+commands:
+  menu:
+    description: 打开菜单

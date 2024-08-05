@@ -1,0 +1,5 @@
+name: Bleed
+author: 和平peaceful
+version: '${project.version}'
+main: top.peacefuly.bleed.Bleed
+api-version: '1.21'
