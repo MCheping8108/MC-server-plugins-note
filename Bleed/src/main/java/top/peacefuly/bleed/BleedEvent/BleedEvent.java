@@ -3,6 +3,7 @@ package top.peacefuly.bleed.BleedEvent;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 //import org.bukkit.event.entity.EntityDamageByBlockEvent;
@@ -18,13 +19,16 @@ public class BleedEvent implements Listener {
     public void onPlayerHeart(EntityDamageEvent e){
         if (e instanceof EntityDamageByEntityEvent){
             EntityDamageByEntityEvent damage = (EntityDamageByEntityEvent) e;
-            Player player = (Player) damage.getEntity();
-            if (damage.getDamager() instanceof Arrow){
-                ItemStack itemStack = player.getInventory().getItemInOffHand();
-                if (itemStack != null && itemStack.getType() == Material.SHIELD){
-                    e.setCancelled(true);
+            if (damage.getEntity() instanceof Player){
+                Player player = (Player) damage.getEntity();
+                if (damage.getDamager() instanceof Zombie){
+                    ItemStack itemStack = player.getInventory().getItemInOffHand();
+                    if (damage.getDamager() instanceof Zombie && itemStack.getType() == Material.SHIELD){
+                        e.setDamage(3.0);
+                    } else if (damage.getDamager() instanceof Zombie){
+                        player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 128, 1));
+                    }
                 }
-                player.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 128, 1));
             }
         }
     }

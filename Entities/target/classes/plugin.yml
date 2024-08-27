@@ -1,0 +1,4 @@
+name: Entities
+version: '1.0'
+main: top.peacefuly.entities.Entities
+api-version: '1.21'

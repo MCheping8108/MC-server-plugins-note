@@ -1,0 +1,7 @@
+name: ArmorStands
+version: '1.0'
+main: top.peacefuly.armorstands.ArmorStands
+api-version: '1.21'
+commands:
+  armorstand:
+    description: Spawn an armor stand

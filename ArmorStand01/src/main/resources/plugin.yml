@@ -1,0 +1,10 @@
+name: ArmorStand01
+version: '1.0-SNAPSHOT'
+main: top.peacefuly.armorStand01.ArmorStand01
+api-version: '1.21'
+commands:
+  armorstand:
+    description: Create a armor stand
+    usage: /<command>
+    aliases:
+      - as
