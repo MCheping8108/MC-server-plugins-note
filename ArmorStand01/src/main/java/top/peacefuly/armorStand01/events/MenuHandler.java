@@ -35,6 +35,7 @@ public class MenuHandler implements Listener {
                     player.closeInventory();
                 }
             }
+            e.setCancelled(true);
         } else if (e.getView().getTitle().equalsIgnoreCase(CREATE_MENU)) {
             switch (Objects.requireNonNull(e.getCurrentItem()).getType()){
                 case ARMOR_STAND -> {
@@ -47,7 +48,21 @@ public class MenuHandler implements Listener {
                 }
 
             }
-
+            e.setCancelled(true);
+        } else if (e.getView().getTitle().equalsIgnoreCase(ChatColor.GREEN+"Confirm Option")) {
+            if (e.getClickedInventory().contains(Material.ARMOR_STAND)) {
+                switch (Objects.requireNonNull(e.getCurrentItem()).getType()){
+                    case GREEN_WOOL -> {
+                        player.sendMessage("Add armor?");
+                        plugin.openConfirmMenu(player, Material.GREEN_WOOL);
+                    }
+                    case RED_WOOL -> {
+                        player.sendMessage("Cancelled");
+                        player.closeInventory();
+                    }
+                }
+            }
+            e.setCancelled(true);
         }
     }
 }

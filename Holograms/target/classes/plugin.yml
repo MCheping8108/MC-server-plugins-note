@@ -1,0 +1,11 @@
+name: Holograms
+version: '1.0-BETA'
+main: top.peacefuly.holograms.Holograms
+api-version: '1.21'
+authors: [ 和平peaceful ]
+description: 在Minecraft中使用ChatGPT聊天
+website: www.peacefuly.top
+commands:
+  hologram:
+    description: Spawn a hologram
+    usage: /hologram
